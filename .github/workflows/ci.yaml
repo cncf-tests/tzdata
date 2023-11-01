@@ -1,0 +1,20 @@
+name: ci
+
+on:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - master
+
+jobs:
+  ci:
+    name: specs
+    runs-on: actuated
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup tzdata
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y distro-info awscli
