@@ -11,7 +11,7 @@ on:
 jobs:
   ci:
     name: specs
-    runs-on: actuated
+    runs-on: actuated-arm64-2cpu-4gb
     steps:
       - uses: actions/checkout@v1
       - name: Setup tzdata
