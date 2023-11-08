@@ -11,10 +11,11 @@ on:
 jobs:
   ci:
     name: specs
-    runs-on: actuated-arm64-2cpu-4gb
+    runs-on: [actuated-arm64-2cpu-4gb, cncf, btf]
     steps:
       - uses: actions/checkout@v1
       - name: Setup tzdata
         run: |
           sudo apt-get update
           sudo apt-get install -y distro-info awscli
+
