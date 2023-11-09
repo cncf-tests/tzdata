@@ -14,6 +14,9 @@ jobs:
     runs-on: [actuated-arm64-2cpu-4gb, cncf, btf]
     steps:
       - uses: actions/checkout@v1
+      - name: Check dmesg
+        run: |
+          sudo dmesg | grep bpf
       - name: Check ls /sys/kernel/btf/vmlinux
         run: |
           sudo ls /sys/kernel/btf/vmlinux
